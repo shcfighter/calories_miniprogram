@@ -1,0 +1,41 @@
+<view class="focus">
+  <image class="bg" src="{{indexBgSrc}}"></image>
+  <view class="search-view" style="background:#222235;">
+    <view class="search-content">
+      <image src="/img/search-pic.png" class="search-icon" />
+      <input placeholder="请输入食物名称" class="search-input" name="search" maxlength="30" confirm-type="搜索" focus="true" bindinput='searchInput' bindconfirm="toSearch">
+      </input>
+      <button class='search-btn' bindtap="toSearch">搜索
+      </button>
+    </view>
+  </view>
+  <view class='foods-container'>
+    <block class="" wx:for="{{food_list}}" wx:key="id">
+      <navigator url='/pages/heat/heat?id={{item.id}}' style='width:100%;'>
+        <view hover-class='hover-class' id="{{item.id}}" style='display:flex; height:50px;border-bottom: 1px solid #DBDBDB;height:157rpx;background-color: #f2f0eb;'>
+          <view style='width:128rpx; height:128rpx; margin:20rpx;'>
+            <image class='food-image' src="{{item.food_url}}"></image>
+          </view>
+          <!-- 右边内容 上下结构 -->
+          <view style='display:flex; flex-direction:column; margin:20rpx;height:130rpx;width:70%;'>
+            <!-- 右边底部内容 左右结构 -->
+            <view style='display:flex; flex-direction:row; height:40rpx;'>
+              <view class="goods-title">{{item.name}}</view>
+              <view class='food-alias'>
+              <view class="goods-price">{{item.alias}}</view>
+              </view>
+              <!-- <label class='item_from'>{{item.name}}</label>
+              <label class='item_time'>{{item.alias}}</label> -->
+            </view>
+          </view>
+          <image src="/img/__my_arrow_icon.png" class='image_to' lazy-load="true"/>
+        </view>
+      </navigator>
+    </block>
+  </view>
+  <view calss="history-search" style='padding:4px 20px;text-align:left;' hidden="{{isfood}}">
+    <view wx:for="{{history_keyword}}" class='history_keyword' hover-class="light_blue">
+      <view bindtap="bindtapFunc" data-text="{{item}}">{{item}}</view>
+    </view>
+  </view>
+</view>

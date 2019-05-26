@@ -1,0 +1,6 @@
+<view class="option-list">
+    <view class="font">
+        <import src="/libs/wxParse/wxParse.wxml" />
+        <template is="wxParse" data="{{wxParseData:html.nodes}}" />
+    </view>
+</view>

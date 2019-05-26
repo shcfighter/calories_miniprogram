@@ -1,0 +1,142 @@
+page {
+  background: rgb(237, 237, 242);
+}
+
+.gray {
+  color: #999;
+}
+
+.c-red {
+  color: red;
+}
+
+.head {
+  height: 260rpx;
+  padding-top: 36rpx;
+  padding-left: 20rpx;
+  background: #fff;
+  padding-bottom: 0rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+  box-shadow: 5rpx 5rpx 10rpx #adadad;
+  overflow: hidden;
+}
+
+.arch-name {
+  font-size: 32rpx;
+}
+
+.arch-time text {
+  font-size: 26rpx;
+}
+
+.head image {
+  width: 184rpx;
+  height: 184rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.center {
+  padding: 30rpx;
+  background: #fff;
+  height: 230rpx;
+  margin: auto 20rpx;
+  position: relative;
+}
+
+.center text {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #adadad;
+}
+
+.center-l {
+  float: left;
+  margin-right: 20rpx;
+  min-width: 370rpx;
+}
+
+.center-r {
+  float: right;
+}
+
+.center-r image {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.option {
+  min-width: 370rpx;
+  height: 40rpx;
+}
+
+.option1 {
+  min-width: 370rpx;
+  height: 50rpx;
+  border-bottom: 1px dashed #d6d6d6;
+  margin-bottom: 10rpx;
+}
+
+.option-l {
+  display: block;
+  width: 140rpx;
+  height: 40rpx;
+  float: left;
+}
+
+.option-r {
+  float: left;
+  height: 40rpx;
+}
+
+.jiantou {
+  position: absolute;
+  right: 20rpx;
+  top: 86rpx;
+}
+
+.rorw-l {
+  width: 28rpx;
+  height: 24rpx;
+  background: rgb(237, 237, 237);
+  position: absolute;
+  top: 110rpx;
+  left: -14rpx;
+  border-radius: 10rpx;
+}
+
+.rorw-r {
+  width: 28rpx;
+  height: 24rpx;
+  background: rgb(237, 237, 237);
+  position: absolute;
+  top: 110rpx;
+  right: -14rpx;
+  border-radius: 10rpx;
+}
+
+.nav-bottom {
+  background: #30324a;
+  position: absolute;
+  left: 0rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  height: 100rpx;
+  width: 100%;
+}
+
+.nav-bottom button {
+  width: 240rpx;
+  height: 100%;
+  float: right;
+  background: linear-gradient(to bottom right, #ffdb08, #ffa707);
+  border-radius: 0rpx;
+}
+
+.nav-bottom text {
+  line-height: 100rpx;
+  padding-left: 20rpx;
+  font-size: 34rpx;
+  color: #f1d00c;
+}

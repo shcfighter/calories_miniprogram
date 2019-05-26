@@ -1,0 +1,69 @@
+.container_heat {
+  position:relative;
+  /*display:flex;*/
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  font-size:32rpx;
+}
+.item_content{
+  width: 90%;
+  height: 100rpx;
+  font-size: 11pt;
+  color: #888;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.item_from{
+  width: 550rpx;
+  font-size: 10pt;
+  color: #999;
+}
+.item_time{
+  width: 100%;
+  font-size: 10pt;
+  color: #999;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-left: 40rpx;
+}
+.hover-class{
+  background-color: #A4D3EE;
+  display:flex; 
+  height:50px;
+  border-bottom: 1px solid #DBDBDB;
+}
+.heat-context {
+  margin:21px 10px 20px 10px;
+  border:1px solid Linen;
+  border-radius:11px;
+}
+.food-context {
+  display: flex;
+  background: -webkit-linear-gradient(#fff,#c6c6c6);
+  height: auto;
+}
+.list{
+  padding: 40rpx 30rpx 30rpx 30rpx;
+  width: 100%;
+}
+.food-context .name{
+  color: #ffa500;
+  font-size: 40rpx;
+  width:100%;
+  line-height: 56rpx;
+  font-weight:bold;
+}
+.food-context .alias{
+  margin-top:35rpx;
+  color:#222222;
+  font-size: 28rpx;
+  width:100%;
+  line-height: 56rpx;
+}
+.food-image {
+  width:128rpx; 
+  height:128rpx;
+}

@@ -1,0 +1,44 @@
+<!--pages/venue-mes/venue-mes.wxml-->
+<view class="container">
+  <view class="scroll">
+    <swiper class="venue_banner" circular autoplay current bindchange="swiperChange">
+    <block wx:for="{{msg.imgs}}">
+    <swiper-item>
+        <image src="{{item}}"></image>
+      </swiper-item>
+    </block>
+      <view class="swipe-btn-wrapper">
+        <text class="current">{{curr}}</text>
+        <text>/{{msg.imgs.length}}</text>
+      </view>
+    </swiper>
+    <view class="course_mes">
+      <view class="course_title">
+        <text>{{msg.name}}</text>
+      </view>
+      <text class="lable" wx:for="{{msg.tags}}">{{item}}</text>
+    </view>
+    <view class="company-mes">
+      <view class="business_hours">
+        <image src="/img/_course_time_icon.png" class="time"></image>
+        <text>营业时间：{{msg.business_hours}}</text>
+        <image src="/img/_course_telephone_icon.png" class="telephone" bindtap="callmeTap"></image>
+      </view>
+      <view class="address">
+        <image src="/img/_course_address_icon.png" class="address_img"></image>
+        <text>{{msg.address}}</text>
+        <image src="/img/__course_navigation_icon.png" class="nav" bindtap="showNav"></image>
+      </view>
+    </view>
+    <view class="prize">
+      <view class="prize_title">
+        <text></text>
+        <text>关于卡路里</text>
+      </view>
+      <view class="peize_lists">
+        <import src="/libs/wxParse/wxParse.wxml"/>
+         <template is="wxParse" data="{{wxParseData:html.nodes}}"/>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+/* pages/views/aboutus/aboutus.wxss */
+page{
+  background: white;
+}
+.font{
+  font-size: 32rpx;
+  color: #555;
+  line-height: 1.35;
+  padding: 40rpx;
+}

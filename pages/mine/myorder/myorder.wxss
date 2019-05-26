@@ -1,0 +1,126 @@
+/* pages/myorder/myorder.wxss */
+
+page {
+    background: #ededf2;
+}
+
+.tab-list {
+    width: 100%;
+    height:100rpx;
+    line-height: 100rpx;
+    display: flex;
+    border-right: solid 1px gray;
+}
+
+.tab-list view {
+    flex-grow: 1;
+    background: #30314a;
+    font-size: 32rpx;
+    color: #ededf2;
+    line-height: 100rpx;
+    text-align: center;
+}
+
+.tab-list .active {
+    color: #30314a;
+    background: #ededf2;
+}
+
+.tab-show {
+    width: 100%;
+    padding: 30rpx 20rpx 0;
+    height:100
+}
+
+.tab-show .item {
+    display: none;
+    height:100%;
+}
+.tab-show .item image{
+    width:390rpx;
+    height:380rpx;
+    position: absolute;
+    top:300rpx;
+    left:0;
+    right:0;
+    margin: 0 auto;
+}
+.tab-show .item.active {
+    display: block;
+}
+
+/*  tab-card end  */
+
+.card {
+    padding: 28rpx;
+    background: #fff;
+    margin-left: 18rpx;
+    margin-right: 18rpx;
+    margin-bottom: 24rpx;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20rpx;
+}
+
+.title {
+    /* border-bottom: 1px dashed #999; */
+    height: 70rpx;
+    margin-bottom: 10rpx;
+}
+.title text{
+    font-size: 32rpx;
+
+}
+.option {
+    height: 50rpx;
+}
+
+.option text {
+    font-size: 24rpx;
+    line-height: 40rpx;
+}
+
+.userinfo-vip {
+    float: left;
+    margin-left: 10rpx;
+}
+
+.rorw {
+    width: 28rpx;
+    height: 24rpx;
+    background: rgb(237, 237, 237);
+    position: absolute;
+    top: 80rpx;
+    border-radius: 10rpx;
+}
+
+.rorw-l {
+    left: -14rpx;
+}
+
+.rorw-r {
+    right: -14rpx;
+}
+
+.btn{
+    position: absolute;
+    top:0;
+    bottom:0;
+    margin: auto 0;
+    right:50rpx;
+    width:100rpx;
+    height:100rpx;
+    color:#fff;
+    text-align: center;
+    line-height: 100rpx;
+    border-radius: 50%;
+}
+.ling{
+    background: #1AAC19;
+}
+.shi{
+    background: rgba(255,216,8,0.7);
+}
+.yong{
+    background: blue;
+}

@@ -1,0 +1,42 @@
+<view class="headimg">
+  <image src="/img/__my_bg.jpg"></image>
+  <view class="headtext">
+    <view style="float:left;">
+      <text>您当前为:</text>
+    </view>
+    <view class="userinfo-vip">
+      <text class="head-vip">{{viptype}}</text>
+      <image mode="aspectFit" src="/img/__my_vip_icon.png"></image>
+    </view>
+  </view>
+  <view class="headtext1">
+    <text>{{vipdue}}前有效,请合理安排训练时间</text>
+  </view>
+</view>
+<view class="center" wx:for="{{viparch}}">
+  <view class="center-l">
+    <view bindtap="link_userinfo" class="center-t">
+      <text class="option-l">{{item.arch_name}}{{item.arch_type}}</text>
+      <text class="option-r">(请到店出示)</text>
+    </view>
+    <view bindtap="link_vipclub" class="option">
+      <text class="option-l">手机号:</text>
+      <text class="option-r">{{item.arch_tel}}</text>
+    </view>
+    <view bindtap="link_aboutus" class="option">
+      <text class="option-l">卡券号:</text>
+      <text class="option-r">{{item.arch_number}}</text>
+    </view>
+  </view>
+  <view class="center-r">
+    <image src="{{item.arch_img}}"></image>
+  </view>
+  <view class="rorw-l"></view>
+  <view class="rorw-r"></view>
+  <view wx:if="{{item.arch_type==1}}">
+    <image class="useicon" src="/img/__my_overdue_icon.png"></image>
+  </view>
+  <view wx:elif="{{item.arch_type==2}}">
+    <image class="useicon" src="/img/__my_used_icon.png"></image>
+  </view>
+</view>

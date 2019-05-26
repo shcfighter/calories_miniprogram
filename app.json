@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/me/me",
+    "pages/mine/aboutus/aboutus",
+    "pages/mine/userdata/userdata",
+    "pages/mine/myorder/myorder",
+    "pages/mine/userinfo/userinfo",
+    "pages/mine/viparch/viparch",
+    "pages/mine/venue-mes/venue-mes",
+
+    "pages/search/search",
+    "pages/heat/heat"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#111",
+    "navigationBarTitleText": "卡路里",
+    "backgroundColor": "#222235",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#b3b3b3",
+    "selectedColor": "#EAC931",
+    "backgroundColor": "#2C2E46",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/__navi_01.png",
+        "selectedIconPath": "img/__navi_01_on.png"
+      },
+      {
+        "pagePath": "pages/mine/me/me",
+        "text": "我的",
+        "iconPath": "img/__navi_04.png",
+        "selectedIconPath": "img/__navi_04_on.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  },
+  "sitemapLocation": "sitemap.json"
+}

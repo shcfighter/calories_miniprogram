@@ -1,0 +1,16 @@
+<!--index.wxml-->
+  <view class="option-list">
+    <view class="option">
+      <text class="option-l">手机号码</text>
+      <input maxlength="11" class="option-r option-input" type="number" value="{{mobile}}"  bindblur="newTel"/>
+    </view>
+    <view class="option">
+      <text class="option-l">姓名</text>
+      <input maxlength="11" class="option-r option-input" type="text" value="{{realname}}"  bindblur="newName" />
+    </view>
+    <view class="sex section option" style="  justify-content: space-between;" bindtap="changeSex">
+     <text  class="option-l">性别</text>
+     <text  class="option-r">{{sex}}</text>
+  </view>
+  </view>
+<button class="change" bindtap="change" type="primary" hover-class="none">修改个人信息</button>
