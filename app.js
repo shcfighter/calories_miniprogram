@@ -21,6 +21,6 @@ App({
 	},
   globalData: {
     //domain: "http://localhost:8080/",
-    domain: "http://111.231.132.168:8989/"
+    domain: "https://healthybeauty360.com/calories/"
   }
 })

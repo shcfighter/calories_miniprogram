@@ -9,7 +9,7 @@
           <navigator class="search_content" open-type="navigate" url="/pages/search/search">
           <view class="search-content">
             <image src="/img/search-pic.png" class="search-icon" />
-            <view class="search-input">搜索</view>
+            <view class="search-input">请输入食物名称</view>
           </view>
           </navigator>
         </view>
@@ -43,37 +43,9 @@
         </block>
     </view>
 </view>
-
-<view id="vip" class="event">
-    <image class="bg" src="{{index2ndBg}}"></image>
-    <view class="title">
-        <image src="{{VIPLogo}}"></image>
-        <view class="name">
-            <view class="left-line"></view>
-            <text>{{VIPTitle}}</text>
-            <view class="right-line"></view>
-        </view>
-    </view>
-    <swiper circular="true" bindchange="swiperChange2" current="{{swiperCurrent2}}">
-        <block wx:for="{{VIP_list}}">
-            <swiper-item class="item">
-                <image src="{{item.logo}}" bindtap="VIPDetail" id="{{index}}"></image>
-                <view class="desc">
-                    <view class="name">{{item.name}}</view>
-                    <view class="price">￥{{item.price}}</view>
-                </view>
-            </swiper-item>
-        </block>
-    </swiper>
-    <view class="vip-dots">
-        <block wx:for="{{VIP_list}}">
-            <view class="dot{{index==swiperCurrent2?'active':''}}" bindtap="changeEvent2" id="{{index}}"></view>
-        </block>
-    </view>
-</view>
 <view class="tech_support">
     <view bindtap="callTap">
       <image src=""></image>
-      <text>独孤求败提供技术支持</text>
+      <text>healthybeauty360.com提供技术支持</text>
     </view>
   </view>

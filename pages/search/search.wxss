@@ -197,7 +197,7 @@ swiper .desc .name{
 }
 .search-content{
    background: white;
-   width:650rpx;
+   width:auto;
    display: flex;
    flex-direction: row;
    align-items: center;
@@ -312,10 +312,10 @@ swiper .desc .name{
   width:128rpx; 
   height:128rpx;
 }
-.history-search {
+.hot-search, .history-search {
   padding-top:10rpx;
 }
-.history_keyword {
+.hot_keyword, .history_keyword {
   background: #A4D3EE;
   border-radius:10px;
   width:auto;
@@ -326,4 +326,24 @@ swiper .desc .name{
 }
 .light_blue{
   background: bg_red;
+}
+.no-more-goods{
+  text-align: center;
+  font-size: 24rpx;
+  padding-top:50rpx; 
+  padding-bottom:48rpx; 
+  color: #999;
+}
+.hot-record, .history-record {
+  color: #ffdb08;
+  display: -webkit-flex;
+  align-items: center;
+}
+.hot-title, .history-title {
+  font-size: 12px;
+}
+.history-clear {
+  flex: 1;
+  font-size: 12px;
+  justify-conent: flex-end;
 }

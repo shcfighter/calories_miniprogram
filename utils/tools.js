@@ -1,5 +1,5 @@
 const SESSION_KEY = 'sessionid';
-const SERVER_URL = 'http://111.231.132.168:8989/';
+const SERVER_URL = 'https://healthybeauty360.com/calories/';
 //const SERVER_URL = 'http://localhost:8080/';
 var WxParse = require('../libs/wxParse/wxParse.js');
 module.exports = {

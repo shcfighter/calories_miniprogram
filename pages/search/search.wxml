@@ -3,7 +3,7 @@
   <view class="search-view" style="background:#222235;">
     <view class="search-content">
       <image src="/img/search-pic.png" class="search-icon" />
-      <input placeholder="请输入食物名称" class="search-input" name="search" maxlength="30" confirm-type="搜索" focus="true" bindinput='searchInput' bindconfirm="toSearch">
+      <input placeholder="请输入食物名称" class="search-input" name="search" maxlength="30" confirm-type="搜索" focus="true" bindinput='searchInput' bindconfirm="toSearch" value="{{search}}">
       </input>
       <button class='search-btn' bindtap="toSearch">搜索
       </button>
@@ -24,8 +24,6 @@
               <view class='food-alias'>
               <view class="goods-price">{{item.alias}}</view>
               </view>
-              <!-- <label class='item_from'>{{item.name}}</label>
-              <label class='item_time'>{{item.alias}}</label> -->
             </view>
           </view>
           <image src="/img/__my_arrow_icon.png" class='image_to' lazy-load="true"/>
@@ -33,7 +31,23 @@
       </navigator>
     </block>
   </view>
+  <view hidden="{{loadingMoreHidden ? true : false}}" class="no-more-goods">没有更多啦</view>
+  <view calss="hot-search" style='padding:4px 20px;text-align:left;'>
+    <view class='hot-record'>
+      <view class='hot-title'>热门食物</view>
+    </view>
+    <view wx:for="{{hot_keyword}}" class='hot_keyword' hover-class="light_blue">
+      <view bindtap="bindtapFunc" data-text="{{item}}">{{item}}</view>
+    </view>
+  </view>
   <view calss="history-search" style='padding:4px 20px;text-align:left;' hidden="{{isfood}}">
+    <view class='history-record'>
+      <view class='history-title'>历史记录</view>
+      <view class='history-clear' bindtap="clearHistory">
+        <image style='width:12px;height:12px;' src="/img/clear.png"/>
+        清空
+      </view>
+    </view>
     <view wx:for="{{history_keyword}}" class='history_keyword' hover-class="light_blue">
       <view bindtap="bindtapFunc" data-text="{{item}}">{{item}}</view>
     </view>

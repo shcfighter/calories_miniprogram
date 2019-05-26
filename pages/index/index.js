@@ -5,7 +5,7 @@ Page({
 		indexBgSrc: '/img/home_top_bg.jpg',
 		index2ndBg: '/img/home_content2-80.jpg',
 		slogan: "TO BE THE BEST YOURSELF",
-		title: '专业定制属于您的建身计划',
+		title: '专业定制属于您的饮食计划',
 		subTitle: '全程一对一训练',
     keyword: '',
 		typeImg: [
@@ -40,7 +40,9 @@ Page({
 		swiperCurrent2: 0,
 	},
 	start: function() {
-		// event.....
+    wx.navigateTo({
+      url: '/pages/search/search'
+    })
 	},
 	swiperChange: function(e) {
 		this.setData({

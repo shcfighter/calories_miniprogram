@@ -6,21 +6,26 @@
         <image class='food-image' src="{{food.food_url}}"></image>
         {{food.name}}
       </view>
-      <view class="alias">别名： {{food.alias}}</view>
+      <view class="alias" hidden='{{!food.alias}}'>别名： {{food.alias}}</view>
     </view>
+    <view class="goods-info-fx">
+          <image src='/img/__share_icon.png' style='max-width: 60%;max-height: 60%;'/>
+          <button open-type="share">分享</button>
+          <text style='padding-left:5px;'>分享</text>
+        </view>
   </view>
   <view class="heat-context">
-  <block class="" wx:for="{{heat_list}}" wx:key="id">
-      <view hover-class='hover-class' id="{{item.id}}" style='display:flex; height:50px;border-bottom: 1px solid #DBDBDB'>
-        <!-- 右边内容 上下结构 -->
-        <view style='display:flex; flex-direction:column; margin:20rpx;'>
-          <!-- 右边底部内容 左右结构 -->
-          <view style='display:flex; flex-direction:row; height:40rpx;'>
-            <label class='item_from'>营养元素</label>
-            <label class='item_time'>每100克</label>
-          </view>
+    <view hover-class='hover-class' id="{{item.id}}" style='display:flex; height:50px;border-bottom: 1px solid #DBDBDB'>
+      <!-- 右边内容 上下结构 -->
+      <view style='display:flex; flex-direction:column; margin:20rpx;'>
+        <!-- 右边底部内容 左右结构 -->
+        <view style='display:flex; flex-direction:row; height:40rpx;'>
+          <label class='item_from'>营养元素</label>
+          <label class='item_time'>每100克</label>
         </view>
       </view>
+    </view>
+    <block class="" wx:for="{{heat_list}}" wx:key="id">
       <view hover-class='hover-class' id="{{item.id}}" style='display:flex; height:50px;border-bottom: 1px solid #DBDBDB'>
         <!-- 右边内容 上下结构 -->
         <view style='display:flex; flex-direction:column; margin:20rpx;'>
@@ -31,6 +36,6 @@
           </view>
         </view>
       </view>
-  </block>
+    </block>
   </view>
 </view>

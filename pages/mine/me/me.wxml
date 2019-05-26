@@ -30,21 +30,6 @@
                 <text class="">{{me.member.end_date}}到期›</text>
             </view>
         </view>
-        <view bindtap="link_viparch" class="option">
-            <view class="option-l">
-                <image mode="aspectFit" class="icon-l" src="/img/__my_icon02.png"></image>
-                <text class="">体验券</text>
-            </view>
-            <view class="option-r">
-                <text class="">{{me.coupon_count}}张›</text>
-            </view>
-        </view>
-        <view bindtap="link_order" class="option">
-            <view class="option-l">
-                <image mode="aspectFit" class="icon-l" src="/img/__my_order_icon.png"></image>
-                <text class="">我的订单</text>
-            </view>
-        </view>
         <view bindtap="link_userdata" class="option">
             <view class="option-l">
                 <image mode="aspectFit" class="icon-l" src="/img/__my_icon03.png"></image>
