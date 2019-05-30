@@ -4,7 +4,7 @@ page{
 
 .focus {
   width: 750rpx;
-  padding-top: 90rpx;
+  padding-top: 150rpx;
   height: 778rpx;
   margin-bottom: 30rpx;
   /*background: url(/images/index-bg-1.jpg)*/

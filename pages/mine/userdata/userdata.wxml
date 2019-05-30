@@ -2,11 +2,11 @@
   <view class="option-list">
     <view class="option">
       <text class="option-l">手机号码</text>
-      <input maxlength="11" class="option-r option-input" type="number" value="{{mobile}}"  bindblur="newTel"/>
+      <input maxlength="11" class="option-r option-input" type="number" value="{{mobile}}"  bindinput="newTel"/>
     </view>
     <view class="option">
       <text class="option-l">姓名</text>
-      <input maxlength="11" class="option-r option-input" type="text" value="{{realname}}"  bindblur="newName" />
+      <input maxlength="11" class="option-r option-input" type="text" value="{{realname}}"  bindinput="newName" />
     </view>
     <view class="sex section option" style="  justify-content: space-between;" bindtap="changeSex">
      <text  class="option-l">性别</text>

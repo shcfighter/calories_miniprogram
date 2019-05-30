@@ -6,8 +6,6 @@
     "pages/mine/userdata/userdata",
     "pages/mine/myorder/myorder",
     "pages/mine/userinfo/userinfo",
-    "pages/mine/viparch/viparch",
-    "pages/mine/venue-mes/venue-mes",
 
     "pages/search/search",
     "pages/heat/heat"
@@ -29,14 +27,14 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "img/__navi_01.png",
-        "selectedIconPath": "img/__navi_01_on.png"
+        "iconPath": "img/home-off.png",
+        "selectedIconPath": "img/home-on.png"
       },
       {
         "pagePath": "pages/mine/me/me",
         "text": "我的",
-        "iconPath": "img/__navi_04.png",
-        "selectedIconPath": "img/__navi_04_on.png"
+        "iconPath": "img/my-off.png",
+        "selectedIconPath": "img/my-on.png"
       }
     ]
   },

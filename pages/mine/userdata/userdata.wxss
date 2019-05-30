@@ -52,7 +52,7 @@ text{
 .option-input {
   text-align: right;
   margin-top: 24rpx;
-  width:200rpx;
+  width:auto;
 }
 
 .change{

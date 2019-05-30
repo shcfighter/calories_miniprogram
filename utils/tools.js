@@ -1,6 +1,6 @@
-const SESSION_KEY = 'sessionid';
+const SESSION_KEY = 'token';
 const SERVER_URL = 'https://healthybeauty360.com/calories/';
-//const SERVER_URL = 'http://localhost:8080/';
+//const SERVER_URL = 'http://localhost:8080/calories/';
 var WxParse = require('../libs/wxParse/wxParse.js');
 module.exports = {
 	wxInfo: '',
@@ -85,7 +85,12 @@ module.exports = {
       header: header,
       success: function (res) {
         console.log(res.data);
-        
+        if (0 == res.data.status) {
+          wx.setStorage({
+            key: SESSION_KEY,
+            data: res.data.items.token
+          })
+        }
       },
       fail: function (res) {
         console.log('网络请求失败:', res);
@@ -229,7 +234,59 @@ module.exports = {
 	/**
 	 * 网络处理开始--------------------------------------------------------------------------------------------
 	 */
-	get: function() {
+  exec: function (url, method, data, successCallback, completeCallback) {
+    let self = this;
+    //路径处理
+    if (url.indexOf('https://') !== 0) {
+      url = SERVER_URL + url;
+    }
+    //header处理
+    let header = {
+      'content-type': 'application/json'
+    };
+    let token = wx.getStorageSync(SESSION_KEY);
+    console.log('[' + url + ']发出请求,token=', token);
+    if (token) {
+      header['token'] = token;
+    }
+    //提示处理
+    wx.showNavigationBarLoading();
+    //开始请求
+    wx.request({
+      url: url,
+      data: data,
+      method: method,
+      header: header,
+      success: function (res) {
+        // console.log(res.data);
+        if (res.statusCode != 200) {
+          self.showError('网络请求异常:' + res.errMsg);
+        } else if (res.data.status && res.data.status != 0) {//请求包含错误代码
+          if (401 == res.data.status) {
+            self.showModal('操作失败', '请允许小程序获取您的用户信息', function () {
+              self.reLogin();
+            }, false);
+          } else {
+            console.log('服务请求失败:', res);
+            self.showError(res.data.message);
+          }
+        } else {//请求成功
+          wx.hideLoading();
+          res.data = res.data.items;
+          successCallback(res);
+        }
+      },
+      fail: function (res) {
+        console.log('网络请求失败:', res);
+        self.showError('网络请求失败:' + res.errMsg);
+      },
+      complete: function () {
+        wx.hideNavigationBarLoading();
+        if (completeCallback) {
+          completeCallback();
+        }
+      }
+    });
 	},
 	post: function(url, data, successCallback, completeCallback) {
 		let self = this;
@@ -241,11 +298,11 @@ module.exports = {
 		let header = {
 			'content-type': 'application/json'
 		};
-		let sessionid = wx.getStorageSync(SESSION_KEY);
-		console.log('[' + url + ']发出请求,sessionid=', sessionid);
-		if(sessionid) {
-			header['sessionid'] = sessionid;
-		}
+    let token = wx.getStorageSync(SESSION_KEY);
+    console.log('[' + url + ']发出请求,token=', token);
+    if (token) {
+      header['token'] = token;
+    }
 		//提示处理
 		wx.showNavigationBarLoading();
 		//开始请求

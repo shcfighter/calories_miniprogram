@@ -16,11 +16,11 @@ Page({
         console.log(value)
         if(value=='男'||value==''){
             self.setData({
-                sex:'女'
+              sex:'女'
             })
         }else{
             self.setData({
-                sex: '男'
+              sex: '男'
             })
         }
       
@@ -40,27 +40,46 @@ Page({
         })
     },
     change:function(e){
-        var self=this;
-        _.post('/rest/user/update',{
-            mobile:self.data.mobile,
-            realname:self.data.realname,
-            sex:self.data.sex
-        },function(res){
-            console.log(res)
+      var self=this;
+      var sex = '2';
+      if ('女' == this.data.sex) {
+        sex = '1';
+      }
+      wx.showToast({
+        title: 'loading',
+        icon: 'loading',
+        duration: 5000
+      })
+      _.exec('api/user/update', 'PUT', {
+        mobile:self.data.mobile,
+        real_name:self.data.realname,
+        sex: sex
+      },function(res){
+        console.log(res)
+        wx.hideToast({ success: true })
+        wx.showToast({
+          title: '提示',
+          icon: 'success',
+          duration: 5000
         })
+      })
     },
     
     onLoad: function (options) {
-        let self = this;
-        _.post('/rest/user/get', {}, function (res) {
-            console.log(res)
-                self.setData({
-                    info: res.data,
-                    sex:res.data.sex,
-                    realname:res.data.realname,
-                    mobile:res.data.mobile,
-                });
-        })
+      let self = this;
+      _.exec('api/user/get', 'GET', {}, function (res) {
+        console.log(res)
+        var sex = '男';
+        if (1 == res.data.sex) {
+            sex = '女';
+        }
+        self.setData({
+          info: res.data,
+          sex:sex,
+          realname: res.data.real_name,
+          mobile: res.data.mobile,
+        });
+      })
     },
     onPullDownRefresh: function () {
         this.onLoad();

@@ -1,33 +1,13 @@
 var _ = require('../../../utils/tools');
 Page({
-	data: {},
+	data: {
+    vip: false
+  },
 	//事件处理函数
 	link_userinfo: function() {
-		_.post('/rest/order/card/open', {}, function(res) {
-			let cardList = res.data.cardList;
-			wx.openCard({
-				cardList: cardList,
-				success: function(res) {
-					console.log(res);
-				}
-			})
-		});
-	},
-	link_viparch: function() {
-		_.post('/rest/order/coupon/open', {}, function(res) {
-			let cardList = res.data.cardList;
-			wx.openCard({
-				cardList: cardList,
-				success: function(res) {
-					console.log(res);
-				}
-			})
-		});
-	},
-	link_order: function() {
-		wx.navigateTo({
-			url: '/pages/mine/myorder/myorder'
-		})
+    wx.navigateTo({
+      url: '/pages/mine/userinfo/userinfo'
+    })
 	},
 	link_userdata: function() {
 		wx.navigateTo({
@@ -41,7 +21,7 @@ Page({
 	},
 	onLoad: function(options) {
 		let self = this;
-		_.post('/rest/user/me', {}, function(res) {
+    _.exec('api/user/get', 'get', {}, function(res) {
 			console.log(res)
 			self.setData({
 				me: res.data

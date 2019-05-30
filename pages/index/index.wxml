@@ -17,7 +17,7 @@
 </view>
 
 <view id="tiyan" class="event">
-    <image class="bg" src="{{index2ndBg}}"></image>
+    <!-- <image class="bg" src="{{index2ndBg}}"></image>
     <view class="title">
         <image src="{{tiYanLogo}}"></image>
         <view class="name">
@@ -25,7 +25,7 @@
             <text>{{tiYanTitle}}</text>
             <view class="right-line"></view>
         </view>
-    </view>
+    </view> -->
     <swiper circular="true" bindchange="swiperChange" current="{{swiperCurrent}}">
         <block wx:for="{{tiyan_list}}">
             <swiper-item class="item">

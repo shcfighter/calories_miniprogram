@@ -1,33 +1,34 @@
 <view class="head">
     <image class="head-bg" src="/img/__my_bg.jpg"></image>
     <view class="userinfo-img">
-        <image src="{{me.user.avatar_url}}"></image>
+        <image src="{{me.avatar_url}}"></image>
         <view class="userinfo-b">
-            <text class="head-text">{{me.user.realname}}</text>
+            <text class="head-text" wx:if="{{me.real_name}}">{{me.real_name}}</text>
+            <text class="head-text" wx:elif="{{me.login_name}}">{{me.login_name}}</text>
             <view class="border"></view>
         </view>
     </view>
-     <view class="card-type" wx:if="{{me.member.type}}">
+     <view class="card-type" wx:if="{{me.type}}">
         <view class="userinfo-vip">
             <image mode="aspectFit" class="vip-icon" src="/img/__my_vip_icon.png"></image>
-            <text class="head-vip">{{me.member.type}}</text>
+            <text class="head-vip">{{me.type}}</text>
         </view>
     </view> 
     <view class="userinfo">
-        <text style="font-size:0.8rem;"wx:if="{{me.member.end_date}}">{{me.member.end_date}}前有效，请合理安排训练时间</text>
+        <text style="font-size:0.8rem;"wx:if="{{me.end_date}}">{{me.end_date}}前有效，请合理安排训练时间</text>
         <text style="font-size:0.8rem;"wx:else>您不是会员</text>
     </view>
 </view>
 <view class="conta">
     <view class="option-list">
-        <view bindtap="link_userinfo" class="option">
+        <view bindtap="link_userinfo" class="option" wx:if="{{vip}}">
             <view class="option-l">
                 <image mode="aspectFit" class="icon-l" src="/img/__my_icon01.png"></image>
                 <text class="">会员信息</text>
-                <image mode="aspectFit" class="icon-r" src="/img/__my_vip_icon.png" wx:if="{{me.member.end_date}}"></image>
+                <image mode="aspectFit" class="icon-r" src="/img/__my_vip_icon.png" wx:if="{{me.end_date}}"></image>
             </view>
-            <view class="option-r" wx:if="{{me.member.end_date}}">
-                <text class="">{{me.member.end_date}}到期›</text>
+            <view class="option-r" wx:if="{{me.end_date}}">
+                <text class="">{{me.end_date}}到期›</text>
             </view>
         </view>
         <view bindtap="link_userdata" class="option">

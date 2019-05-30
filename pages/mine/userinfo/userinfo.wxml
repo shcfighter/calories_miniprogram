@@ -9,7 +9,7 @@
       <image mode="aspectFit" src="/img/__my_vip_icon.png"></image>
     </view>
   </view>
-  <view class="headtext1">
+  <view class="headtext1" wx:if="{{vipdue}}">
     <text>{{vipdue}}前有效,请合理安排训练时间</text>
   </view>
 </view>

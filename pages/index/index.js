@@ -6,34 +6,10 @@ Page({
 		index2ndBg: '/img/home_content2-80.jpg',
 		slogan: "TO BE THE BEST YOURSELF",
 		title: '专业定制属于您的饮食计划',
-		subTitle: '全程一对一训练',
+		subTitle: '全程一对一',
     keyword: '',
-		typeImg: [
-			{
-				imgSrc: '/img/__home_icon_01.png',
-				title: '预约体验',
-				linkSrc: '/pages/experience/list/list'
-			},
-			{
-				imgSrc: '/img/__home_icon_02.png',
-				title: '专业教练',
-				linkSrc: '/pages/coach/list/list'
-			},
-			{
-				imgSrc: '/img/__home_icon_03.png',
-				title: '课程介绍',
-				linkSrc: '/pages/course/list/list'
-			},
-			{
-				imgSrc: '/img/__home_icon_04.png',
-				title: '场馆介绍',
-				linkSrc: '/pages/mine/venue-mes/venue-mes'
-			}
-		],
 		tiYanTitle: '体验券',
 		tiYanLogo: '/img/__home_icon_05.png',
-		VIPTitle: '会员卡购买',
-		VIPLogo: '/img/__home_icon_05.png',
 		slider: [],
 		swiperCurrent: 0,
 		slider2: [],
