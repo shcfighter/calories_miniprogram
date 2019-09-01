@@ -1,5 +1,5 @@
 const SESSION_KEY = 'token';
-const SERVER_URL = 'https://healthybeauty360.com/calories/';
+const SERVER_URL = 'https://calories.healthybeauty360.com/calories/';
 //const SERVER_URL = 'http://localhost:8080/calories/';
 var WxParse = require('../libs/wxParse/wxParse.js');
 module.exports = {

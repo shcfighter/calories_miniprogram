@@ -15,7 +15,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.7.0",
 	"appid": "wxf98bdcd6150b7e33",
-	"projectname": "calories-miniprogram",
+	"projectname": "calories_miniprogram",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

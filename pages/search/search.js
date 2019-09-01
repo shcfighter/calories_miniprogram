@@ -44,7 +44,8 @@ Page({
   toSearch: function (e) {
     var that = this
     this.setData({
-      food_list: []
+      food_list: [],
+      curPage: 1
     });
     that.searchFood(this.data.search)
   },
@@ -72,13 +73,15 @@ Page({
       duration: 5000
     })
     this.setData({
-      loadingMoreHidden: true
+      loadingMoreHidden: true,
+      isSearch: true
     });
     var that = this;
     _.post('api/food/search', {"keyword": keyword, "curPage":that.data.curPage}, function (res) {
       if (null == res.data || res.data.length <= 0) {
         that.setData({
-          loadingMoreHidden: false
+          loadingMoreHidden: false,
+          isSearch: true
         });
       }
       var lists = that.data.food_list;
@@ -102,12 +105,17 @@ Page({
           if (keywords.indexOf(that.data.search) < 0) {
             keywords.unshift(that.data.search)
           }
-          wx.setStorageSync('keyword', keywords)
+          if ("" != keywords) {
+            wx.setStorageSync('keyword', keywords)
+          }
         },
         fail: function () {
           var keywords = new Array();
           keywords.unshift(that.data.search)
-          wx.setStorageSync('keyword', keywords)
+          console.log(keywords)
+          if ("" != keywords) {
+            wx.setStorageSync('keyword', keywords)
+          }
         }
       })
     });
