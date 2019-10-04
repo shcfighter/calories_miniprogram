@@ -4,7 +4,8 @@ Page({
   data: {
     foodId: 0,
     heat_list: [],
-    food: {}
+    food: {},
+    image_url: ''
   },
   onLoad: function (e) {
     var foodId = e.id;
@@ -57,7 +58,8 @@ Page({
         }
         console.log(res.data.items)
         that.setData({
-          food: res.data.items
+          food: res.data.items,
+          image_url: res.data.items.food_url
         });
       }
     })
@@ -82,6 +84,13 @@ Page({
   toDetailsTap: function (e) {
     wx.navigateTo({
       url: '/pages/heat/heat'
+    })
+  },
+  showImage: function (e) {
+    var that = this;
+    wx.previewImage({
+      current: '', // 当前显示图片的http链接
+      urls: [that.data.image_url] // 需要预览的图片http链接列表
     })
   }
 })

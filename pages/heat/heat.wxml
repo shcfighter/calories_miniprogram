@@ -3,7 +3,7 @@
   <view class="food-context">
     <view class="list">
       <view class="name">
-        <image class='food-image' src="{{food.food_url}}"></image>
+        <image class='food-image' src="{{food.food_url}}" bindtap='showImage'></image>
         {{food.name}}
       </view>
       <view class="alias" hidden='{{!food.alias}}'>别名： {{food.alias}}</view>
