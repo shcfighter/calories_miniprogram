@@ -6,7 +6,7 @@ App({
 	},
 	onLaunch: function() {
 		console.log('程序开始运行')
-		_.login();
+		//_.login();
 	},
 	onShow: function() {
 		var self = this;

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/loginIndex/index",
     "pages/index/index",
     "pages/mine/me/me",
     "pages/mine/aboutus/aboutus",

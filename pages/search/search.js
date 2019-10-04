@@ -18,7 +18,7 @@ Page({
       success: function (res) {
         console.log("onload:" + res.data)
         that.setData({
-          history_keyword: res.data.slice(0, 20),
+          history_keyword: res.data.slice(0, 10),
           isfood: false
         });
       },
@@ -102,10 +102,15 @@ Page({
           } else {
             keywords = res.data;
           }
+          if (!keyword) {
+            return ;
+          }
           if (keywords.indexOf(that.data.search) < 0) {
             keywords.unshift(that.data.search)
           }
-          if ("" != keywords) {
+          if (keywords) {
+            keywords = keywords.slice(0, 5);
+            console.log("keywords:" + keywords);
             wx.setStorageSync('keyword', keywords)
           }
         },
