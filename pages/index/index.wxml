@@ -1,51 +1,21 @@
-<view class="focus">
-    <image class="bg" src="{{indexBgSrc}}"></image>
-    <view class="slogan">{{slogan}}</view>
-    <view class="title">{{title}}</view>
-    <view class="sub-title">{{subTitle}}</view>
-    <view id="start" bindtap="start">现在开始</view>
-    <view class="lists">
-        <view class="search-view" style="background:#222235;">
-          <navigator class="search_content" open-type="navigate" url="/pages/search/search">
-          <view class="search-content">
-            <image src="/img/search-pic.png" class="search-icon" />
-            <view class="search-input">请输入食物名称</view>
-          </view>
-          </navigator>
+<view wx:if="{{isHide}}">
+    <view wx:if="{{canIUse}}" >
+        <view class='header'>
+            <image src='/img/wx_login.png'></image>
         </view>
+
+        <view class='content'>
+            <view>申请获取以下权限</view>
+            <text>获得你的公开信息(昵称，头像等)</text>
+        </view>
+
+        <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+            授权登录
+        </button>
     </view>
+    <view wx:else>请升级微信版本</view>
 </view>
 
-<view id="tiyan" class="event">
-    <!-- <image class="bg" src="{{index2ndBg}}"></image>
-    <view class="title">
-        <image src="{{tiYanLogo}}"></image>
-        <view class="name">
-            <view class="left-line"></view>
-            <text>{{tiYanTitle}}</text>
-            <view class="right-line"></view>
-        </view>
-    </view> -->
-    <swiper circular="true" bindchange="swiperChange" current="{{swiperCurrent}}">
-        <block wx:for="{{tiyan_list}}">
-            <swiper-item class="item">
-                <image src="{{item.logo}}" bindtap="tiyanDetail" id="{{index}}"></image>
-                <view class="desc">
-                    <view class="name">{{item.name}}</view>
-                    <view class="price">￥{{item.price}}</view>
-                </view>
-            </swiper-item>
-        </block>
-    </swiper>
-    <view class="dots">
-        <block wx:for="{{tiyan_list}}">
-            <view class="dot{{index==swiperCurrent?'active':''}}" bindtap="changeEvent" id="{{index}}"></view>
-        </block>
-    </view>
-</view>
-<view class="tech_support">
-    <view bindtap="callTap">
-      <image src=""></image>
-      <text>healthybeauty360.com提供技术支持</text>
-    </view>
-  </view>
+<!-- <view wx:else>
+    <view>欢迎光临</view>
+</view> -->

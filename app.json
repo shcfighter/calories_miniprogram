@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/loginIndex/index",
     "pages/index/index",
+    "pages/searchIndex/index",
     "pages/mine/me/me",
     "pages/mine/aboutus/aboutus",
     "pages/mine/userdata/userdata",
@@ -26,7 +26,7 @@
     "borderStyle": "black",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/searchIndex/index",
         "text": "首页",
         "iconPath": "img/home-off.png",
         "selectedIconPath": "img/home-on.png"
