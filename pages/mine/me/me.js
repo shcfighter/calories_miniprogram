@@ -21,12 +21,23 @@ Page({
 	},
 	onLoad: function(options) {
 		let self = this;
-    _.exec('api/user/get', 'get', {}, function(res) {
-			console.log(res)
-			self.setData({
-				me: res.data
-			});
-		});
+    // 查看是否授权
+    wx.getSetting({
+      success: function (res) {
+        if (!res.authSetting['scope.userInfo']) {
+          wx.redirectTo({
+            url: '../../index/index'
+          });  
+        } else {
+          _.exec('api/user/get', 'get', {}, function (res) {
+            console.log(res)
+            self.setData({
+              me: res.data
+            });
+          });
+        }
+      }
+    });
 	},
 	onPullDownRefresh: function () {
 		this.onLoad();
