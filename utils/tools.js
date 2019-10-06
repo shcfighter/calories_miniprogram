@@ -125,7 +125,6 @@ module.exports = {
 			}
 		});
 	},
-
 	/**
 	 * 时间格式化输出，如3:25:19 86，支付阶段做倒计时用
 	 * @param micro_second

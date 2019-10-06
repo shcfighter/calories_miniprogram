@@ -1,6 +1,6 @@
 <view class="head">
     <image class="head-bg" src="/img/__my_bg.jpg"></image>
-    <view class="userinfo-img">
+    <view wx:if="{{me}}" class="userinfo-img">
         <image src="{{me.avatar_url}}"></image>
         <view class="userinfo-b">
             <text class="head-text" wx:if="{{me.real_name}}">{{me.real_name}}</text>
@@ -8,16 +8,20 @@
             <view class="border"></view>
         </view>
     </view>
+    <view wx:else class="userinfo" style="margin-bottom:50rpx;">
+      <image class="userinfo-avatar" src="/img/nologin.png" background-size="cover" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></image>
+      <button class="weui-btn mini-btn" plain="true" size="mini" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击登录账户</button>
+    </view>
      <view class="card-type" wx:if="{{me.type}}">
         <view class="userinfo-vip">
             <image mode="aspectFit" class="vip-icon" src="/img/__my_vip_icon.png"></image>
             <text class="head-vip">{{me.type}}</text>
         </view>
     </view> 
-    <view class="userinfo">
+    <!-- <view class="userinfo">
         <text style="font-size:0.8rem;"wx:if="{{me.end_date}}">{{me.end_date}}前有效，请合理安排训练时间</text>
         <text style="font-size:0.8rem;"wx:else>您不是会员</text>
-    </view>
+    </view> -->
 </view>
 <view class="conta">
     <view class="option-list">

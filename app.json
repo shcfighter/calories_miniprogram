@@ -1,13 +1,11 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/searchIndex/index",
+    "pages/loginIndex/index",
     "pages/mine/me/me",
     "pages/mine/aboutus/aboutus",
     "pages/mine/userdata/userdata",
-    "pages/mine/myorder/myorder",
-    "pages/mine/userinfo/userinfo",
-
+    
     "pages/search/search",
     "pages/heat/heat"
   ],
@@ -23,10 +21,10 @@
     "color": "#b3b3b3",
     "selectedColor": "#EAC931",
     "backgroundColor": "#2C2E46",
-    "borderStyle": "black",
+    "borderStyle": "black", 
     "list": [
       {
-        "pagePath": "pages/searchIndex/index",
+        "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "img/home-off.png",
         "selectedIconPath": "img/home-on.png"
