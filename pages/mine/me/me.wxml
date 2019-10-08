@@ -9,7 +9,7 @@
         </view>
     </view>
     <view wx:else class="userinfo" style="margin-bottom:50rpx;">
-      <image class="userinfo-avatar" src="/img/nologin.png" background-size="cover" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></image>
+      <image class="userinfo-avatar" src="/img/nologin.png" background-size="cover"></image>
       <button class="weui-btn mini-btn" plain="true" size="mini" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击登录账户</button>
     </view>
      <view class="card-type" wx:if="{{me.type}}">

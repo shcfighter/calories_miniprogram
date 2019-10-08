@@ -46,10 +46,7 @@ Page({
                 success: function (res) {
                   console.log(res.data);
                   if (0 == res.data.status) {
-                    wx.setStorage({
-                      key: 'token',
-                      data: res.data.items.token
-                    });
+                    wx.setStorageSync('token', res.data.items.token);
                     _.exec('api/user/get', 'get', {}, function (res) {
                       that.setData({
                         me: res.data
